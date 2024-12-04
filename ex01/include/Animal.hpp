@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 16:33:49 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/03 16:26:23 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 17:40:37 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <iostream>
+#include <iomanip>
 
-class	Cat : public Animal
+class	Animal
 {
-	public:
-		Cat();
-		~Cat() override;
-		Cat(const Cat &copy);
-		Cat &operator=(const Cat &other);
+	protected:
+		std::string _type;
 
-		void makeSound(void) const override;
+	public:
+		Animal();
+		Animal(std::string type);
+		virtual ~Animal();
+		Animal(const Animal &copy);
+		Animal &operator=(const Animal &copy);
+
+		//methods
+		virtual std::string	getIdea(int index) const = 0;
+		virtual void		setIdea(int index, std::string idea) = 0;
+		std::string		getType(void) const;
+		virtual void	makeSound(void) const;
 };

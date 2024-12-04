@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 16:33:49 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/03 16:26:23 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/03 14:33:34 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 16:11:59 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <iostream>
+#include <iomanip>
 
-class	Cat : public Animal
+class	WrongAnimal
 {
-	public:
-		Cat();
-		~Cat() override;
-		Cat(const Cat &copy);
-		Cat &operator=(const Cat &other);
+	protected:
+		std::string _type;
 
-		void makeSound(void) const override;
+	public:
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		~WrongAnimal();
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal &operator=(const WrongAnimal &copy);
+
+		//methods
+		std::string		getType(void) const;
+		void			makeSound(void) const;
 };

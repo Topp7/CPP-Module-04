@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 18:38:03 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/03 17:52:21 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/03 14:37:26 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 14:40:56 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "../include/WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "Cat created!" << std::endl;
+	std::cout << "Default WrongCat created!" << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat destroyed!" << std::endl;
+	std::cout << "WrongCat destroyed!" << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal(copy)
+WrongCat::WrongCat(const WrongCat &copy)
 {
-	std::cout << "Cat copied!" << std::endl;
+	std::cout << "WrongCat copied!" << std::endl;
+	*this = copy;
 }
-Cat	&Cat::operator=(const Cat &copy)
+WrongCat	&WrongCat::operator=(const WrongCat &copy)
 {
-	std::cout << "Cat assigned/copied" << std::endl;
+	std::cout << "WrongCat assigned/copied" << std::endl;
 	if (this != &copy)
-		Animal::operator= (copy);
+		this->_type = copy._type;
 	return (*this);
 }
 
-void	Cat::makeSound(void)	const
+void	WrongCat::makeSound(void)	const
 {
 	std::cout << "Meow" << std::endl;
 }

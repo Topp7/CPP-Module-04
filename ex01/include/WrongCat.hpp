@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 16:33:49 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/03 16:26:23 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/03 14:37:50 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 14:49:14 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class	Cat : public Animal
+class	WrongCat : public WrongAnimal
 {
 	public:
-		Cat();
-		~Cat() override;
-		Cat(const Cat &copy);
-		Cat &operator=(const Cat &other);
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &copy);
+		WrongCat &operator=(const WrongCat &other);
 
-		void makeSound(void) const override;
+		void makeSound(void) const;
 };
