@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/04 16:11:41 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/01 16:33:49 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 17:22:23 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <iomanip>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class	Animal
+class	Cat : public Animal
 {
-	protected:
-		std::string _type;
+	private:
+		Brain *_brain;
 
 	public:
-		Animal();
-		Animal(std::string type);
-		virtual ~Animal();
-		Animal(const Animal &copy);
-		Animal &operator=(const Animal &copy);
+		Cat();
+		~Cat() override;
+		Cat(const Cat &copy);
+		Cat &operator=(const Cat &other);
 
-		//methods
-		virtual std::string	getIdea(int index) const = 0;
-		virtual void		setIdea(int index, std::string idea) = 0;
-		std::string			getType(void) const;
-		virtual void		makeSound(void) const;
+		std::string	getIdea(int index) const override;
+		void		setIdea(int index, std::string idea) override;
+		void makeSound(void) const override;
 };

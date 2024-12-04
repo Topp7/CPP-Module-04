@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/04 16:11:41 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/04 17:21:27 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/04 17:30:47 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <iomanip>
+#include "ICharacter.hpp"
 
-class	Animal
+class ICharacter;
+
+class AMateria
 {
 	protected:
-		std::string _type;
+		std::string	_type;
 
 	public:
-		Animal();
-		Animal(std::string type);
-		virtual ~Animal();
-		Animal(const Animal &copy);
-		Animal &operator=(const Animal &copy);
+		AMateria();
+		AMateria(std::string const &type);
+		virtual ~AMateria();
+		AMateria(const AMateria &copy);
+		AMateria &operator=(const AMateria &copy);
 
-		//methods
-		virtual std::string	getIdea(int index) const = 0;
-		virtual void		setIdea(int index, std::string idea) = 0;
-		std::string			getType(void) const;
-		virtual void		makeSound(void) const;
+		std::string const	&getType() const ; //Retrurns ther materia type
+		virtual				AMateria *clone() const = 0;
+		virtual void		use(ICharacter &target);
 };

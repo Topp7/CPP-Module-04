@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/04 16:11:41 by stopp            ###   ########.fr       */
+/*   Updated: 2024/12/04 16:12:27 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ class	Animal
 		virtual std::string	getIdea(int index) const = 0;
 		virtual void		setIdea(int index, std::string idea) = 0;
 		std::string			getType(void) const;
-		virtual void		makeSound(void) const;
+		virtual void		makeSound(void) const = 0;
 };

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/04 16:11:41 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/03 14:33:34 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 16:11:59 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,19 @@
 #include <iostream>
 #include <iomanip>
 
-class	Animal
+class	WrongAnimal
 {
 	protected:
 		std::string _type;
 
 	public:
-		Animal();
-		Animal(std::string type);
-		virtual ~Animal();
-		Animal(const Animal &copy);
-		Animal &operator=(const Animal &copy);
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		~WrongAnimal();
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal &operator=(const WrongAnimal &copy);
 
 		//methods
-		virtual std::string	getIdea(int index) const = 0;
-		virtual void		setIdea(int index, std::string idea) = 0;
-		std::string			getType(void) const;
-		virtual void		makeSound(void) const;
+		std::string		getType(void) const;
+		void			makeSound(void) const;
 };

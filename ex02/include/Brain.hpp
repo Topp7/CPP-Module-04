@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 15:50:35 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/04 16:11:41 by stopp            ###   ########.fr       */
+/*   Created: 2024/12/03 16:26:32 by stopp             #+#    #+#             */
+/*   Updated: 2024/12/03 16:47:51 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <string>
 #include <iostream>
-#include <iomanip>
 
-class	Animal
+class	Brain
 {
-	protected:
-		std::string _type;
+	private:
+		std::string	_ideas[100];
 
 	public:
-		Animal();
-		Animal(std::string type);
-		virtual ~Animal();
-		Animal(const Animal &copy);
-		Animal &operator=(const Animal &copy);
+		Brain();
+		~Brain();
+		Brain(const Brain &copy);
+		Brain &operator=(const Brain &copy);
 
-		//methods
-		virtual std::string	getIdea(int index) const = 0;
-		virtual void		setIdea(int index, std::string idea) = 0;
-		std::string			getType(void) const;
-		virtual void		makeSound(void) const;
+		std::string getIdea(int index) const;
+		void		setIdea(int index, std::string idea);
 };
