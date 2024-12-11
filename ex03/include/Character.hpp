@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soren <soren@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:32 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/05 18:09:13 by soren            ###   ########.fr       */
+/*   Updated: 2024/12/06 17:02:02 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class	Character : public ICharacter
 	public:
 		Character();
 		Character(std::string const &name);
-		~Character();
+		~Character() override;
 		Character(const Character &copy);
 		Character &operator=(const Character &copy);
 
-		std::string const	&getName() const;
-		void				equip(AMateria *mat);
-		void				unequip(int index);
-		void				use(int index, ICharacter &target);
+		std::string const	&getName() const  override;
+		void				equip(AMateria *mat) override;
+		void				unequip(int idx) override;
+		void				use(int idx, ICharacter &target) override;
 };

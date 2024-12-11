@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soren <soren@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:48 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/05 18:13:01 by soren            ###   ########.fr       */
+/*   Updated: 2024/12/06 17:32:44 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ class AMateria;
 class ICharacter
 {
 	public:
-		virtual						~ICharacter();
+		virtual						~ICharacter() {}
+
 		virtual std::string const	&getName() const = 0;
 		virtual void				equip(AMateria *mat) = 0;
-		virtual void				unequip(int index) = 0;
-		virtual void				use(int index, ICharacter &target) = 0;
+		virtual void				unequip(int idx) = 0;
+		virtual void				use(int idx, ICharacter &target) = 0;
 };

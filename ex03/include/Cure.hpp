@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soren <soren@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:34 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/05 18:17:13 by soren            ###   ########.fr       */
+/*   Updated: 2024/12/06 18:19:52 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Cure : public AMateria
 		Cure();
 		Cure(const Cure &copy);
 		Cure &operator=(const Cure &other);
-		~Cure();
+		~Cure() override = default;
 
-		AMateria	*clone() const;
-		void		use(ICharacter &target);
+		AMateria	*clone() const override;
+		void		use(ICharacter &target) override;
 };

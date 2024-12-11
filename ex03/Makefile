@@ -6,7 +6,7 @@
 #    By: stopp <stopp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/13 17:55:12 by stopp             #+#    #+#              #
-#    Updated: 2024/12/04 17:22:03 by stopp            ###   ########.fr        #
+#    Updated: 2024/12/06 17:31:13 by stopp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,11 @@ CFLAGS := -Wall -Wextra -Werror -std=c++17
 
 # Directories and Files
 OBJDIR := obj
-SRC :=	src/Animal.cpp\
-		src/Cat.cpp\
-		src/Dog.cpp\
-		src/Brain.cpp\
-		src/WrongAnimal.cpp\
-		src/WrongCat.cpp\
+SRC :=	src/AMateria.cpp \
+		src/Character.cpp \
+		src/Cure.cpp \
+		src/Ice.cpp \
+		src/MateriaSource.cpp \
 		src/main.cpp \
 
 OBJ := $(SRC:%.cpp=$(OBJDIR)/%.o)

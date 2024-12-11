@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soren <soren@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:45 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/05 18:40:00 by soren            ###   ########.fr       */
+/*   Updated: 2024/12/06 18:27:51 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 
 class Ice : public AMateria
 {
-	Ice();
-	Ice(const Ice &copy);
-	Ice &operator=(const Ice &copy);
-	~Ice();
+	public:
+		Ice();
+		Ice(const Ice &copy);
+		Ice &operator=(const Ice &copy);
+		~Ice() override;
 
-	AMateria	*clone() const;
-	void		use(ICharacter &target);
+		AMateria	*clone() const override;
+		void		use(ICharacter &target) override;
 };

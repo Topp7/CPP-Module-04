@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soren <soren@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:50 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/05 18:49:26 by soren            ###   ########.fr       */
+/*   Updated: 2024/12/06 18:14:21 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,7 @@ AMateria &AMateria::operator=(const AMateria &copy)
 	return (*this);
 }
 
-AMateria::~AMateria()
-{
-
-}
-
 std::string const &AMateria::getType() const
 {
 	return (_type);
-}
-
-void	AMateria::use(ICharacter &target)
-{
-	std::cout << "AMateria " << this->_type << " used on " << target.getName() << std::endl;
 }
