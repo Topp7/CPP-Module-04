@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:52 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/11 12:47:09 by stopp            ###   ########.fr       */
+/*   Updated: 2024/12/12 14:58:56 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ Character	&Character::operator=(const Character &copy)
 
 Character::~Character()
 {
-	for (int i = 0; i < 4; i++)
-	{
-		if (_materia[i])
-		{
-			delete _materia[i];
-			_materia[i] = nullptr;
-		}
-	}
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	if (_materia[i])
+	// 	{
+	// 		delete _materia[i];
+	// 		_materia[i] = nullptr;
+	// 	}
+	// }
 }
 
 std::string const	&Character::getName() const
@@ -86,11 +86,24 @@ void	Character::equip(AMateria *m)
 void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4 && this->_materia[idx])
-		delete (this->_materia[idx]);
+		this->_materia[idx] = nullptr;
 }
 
 void	Character::use(int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < 4 && this->_materia[idx])
 		this->_materia[idx]->use(target);
+}
+
+void	Character::print_inventory(void)
+{
+	std::cout << "\ncurrent Inventory:\n---------------" << std::endl;
+	for(int i = 0; i < 4; i++)
+	{
+		if (_materia[i] != nullptr)
+			std::cout << i << ": " << _materia[i]->getType() << std::endl;
+		else
+			std::cout << i << ": " << "empty" << std::endl;
+	}
+	std::cout << std::endl;
 }

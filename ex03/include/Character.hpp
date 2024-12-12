@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:32 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/06 17:02:02 by stopp            ###   ########.fr       */
+/*   Updated: 2024/12/12 14:28:48 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ class	Character : public ICharacter
 		void				equip(AMateria *mat) override;
 		void				unequip(int idx) override;
 		void				use(int idx, ICharacter &target) override;
+		void				print_inventory(void) override;
 };

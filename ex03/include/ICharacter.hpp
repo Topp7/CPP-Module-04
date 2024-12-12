@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:21:48 by stopp             #+#    #+#             */
-/*   Updated: 2024/12/06 17:32:44 by stopp            ###   ########.fr       */
+/*   Updated: 2024/12/12 14:42:55 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ class ICharacter
 		virtual void				equip(AMateria *mat) = 0;
 		virtual void				unequip(int idx) = 0;
 		virtual void				use(int idx, ICharacter &target) = 0;
+		virtual void				print_inventory(void) = 0;
 };
